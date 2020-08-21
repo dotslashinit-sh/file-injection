@@ -6,7 +6,7 @@
  It is used to retrieve the hidden file from the injected file.
 
 ## Usage
- **NOTE:** *Camouflage* is the file seen on the *outside* and *adrenalin* is the file hidden *inside*.
+ **NOTE:** *Camouflage* is the file seen on the *outside* and *adrenalin* is the file hidden *inside*.\n
  `inject <camouflage> <adrenalin> <output>`
 
  `deinject <input> <deinject_point> <output_file>`
