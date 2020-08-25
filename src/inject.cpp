@@ -25,6 +25,7 @@ int main(int argc, char ** argv)
 	const uInt CHUNK_SIZE = 52428800;
 	const uInt THREAD_COUNT = atoi(argv[3]);
 
+	/*Open the file for input in binary mode*/
 	camouflage.open(argv[1], std::ios::in | std::ios::binary);
 	adrenalin.open(argv[2], std::ios::in | std::ios::binary);
 	output.open(argv[3], std::ios::out | std::ios::binary);
