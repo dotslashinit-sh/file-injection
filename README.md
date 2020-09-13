@@ -1,6 +1,6 @@
-# File injector
+# File injection example
 ## Introduction
- Inject and deinject files into JPEG, ZIP, RAR AND MPEG files.
+ Example of injecting and deinjecting files into JPEG, ZIP, RAR and MPEG files.
 
  After the injection, the program prints something I call "deinject point" or the size of the camouflage file.
  It is used to retrieve the hidden file from the injected file.
