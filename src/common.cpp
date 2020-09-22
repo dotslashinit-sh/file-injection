@@ -2,20 +2,20 @@
 
 MemoryBlock::MemoryBlock(const MemoryBlock & mem) : blockSize(mem.blockSize), block(nullptr)
 {
-		std::cout << "Called MemoryBlock(const MemoryBlock & mem)." << std::endl;
+
 		for(size_t i = 0; i < blockSize; i++)
 			block[i] = mem.block[i];
 }
 
 MemoryBlock::MemoryBlock(MemoryBlock && mem) noexcept : blockSize(mem.blockSize), block(nullptr)
 {
-	std::cout << "Called MemoryBlock(MemoryBlock && mem)." << std::endl;
+
 	mem.~MemoryBlock();
 }
 
 MemoryBlock::~MemoryBlock()
 {
-	std::cout << "Called Destructor." << std::endl;
+
 	delete[] block;
 }
 
@@ -28,7 +28,7 @@ MemoryBlock & MemoryBlock::operator=(const MemoryBlock & mem)
 		block = new char[blockSize];
 		for(size_t i = 0; i < blockSize; i++)
 			block[i] = mem.block[i];
-		std::cout << "Called operator=(const MemoryBlock &)." << std::endl;
+
 		return *this;
 	}
 	else
@@ -42,7 +42,7 @@ MemoryBlock & MemoryBlock::operator=(MemoryBlock && mem) noexcept
 	block = new char[blockSize];/*...and create a new block*/
 	for(size_t i = 0; i < blockSize; i++)
 		block[i] = mem.block[i];//Copy the data from the other block
-	std::cout << "Called operator=(MemoryBlock &&)." << std::endl;
+
 	return *this;
 }
 
