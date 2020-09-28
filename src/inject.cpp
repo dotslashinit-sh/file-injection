@@ -23,7 +23,6 @@ int main(int argc, char ** argv)
 	File output;
 
 	const uInt CHUNK_SIZE = 52428800;
-	const uInt THREAD_COUNT = atoi(argv[3]);
 
 	/*Open the file for input in binary mode*/
 	camouflage.open(argv[1], std::ios::in | std::ios::binary);
@@ -41,7 +40,7 @@ int main(int argc, char ** argv)
 
 	/*Read the data from the stream*/
 	camouflage.readInChunks(start, CHUNK_SIZE, camSize);
-	cout << "Decompile point: " << camSize << endl;
+	cout << "Decompile point: " << camSize << " " << adrSize << endl;
 	adrenalin.readInChunks(start + camSize, CHUNK_SIZE, adrSize);
 
 	cout << "Read the files successfully." << endl;

@@ -64,7 +64,6 @@ public:
 	virtual ~File()
 	{
 		close();
-		std::cout << "Called destructor." << std::endl;
 	}
 
 	File & operator=(const File & f) = default;

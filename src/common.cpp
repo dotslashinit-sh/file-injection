@@ -85,54 +85,42 @@ void File::writeFile(char * block, size_t size)
 
 void File::readInChunks(char * block, size_t chunkSize, size_t blockSize)
 {
-	uInt dataRead = 0;
-	uInt dataLeft = blockSize;
+	int dataread = 0, dataleft = blockSize;
 
-	/*Check if the amount of data read is lesser than the total size*/
-	while(dataRead < blockSize)
+	while(dataleft > 0)
 	{
-		/*If the amount of data left to be read is greater than the chunk size,*
-		*read the data in chunk and write it to the block just after where     *
-		*the previous data was written.										  */
-		if(dataLeft > chunkSize)
+		std::cout << dataleft << std::endl;
+		if(dataleft < chunkSize)
 		{
-				read(block + dataRead, dataLeft);
-				/*Update the amount of data read and the amount of data left to be read.*/
-				dataRead += chunkSize;
-				dataLeft = blockSize - dataRead;
+			read(block + dataread, dataleft);
+			break;
 		}
-		/*If the amount of data left is lesser than the chunk size, read the data left*
-		*and break the loop.														 */
-		else if(dataLeft < chunkSize)
-		{
-			read(block + dataRead, dataLeft);
-			dataRead += dataLeft;
-		}
-		std::cout << dataRead << " / " << blockSize << "\r";
 
+		read(block + dataread, chunkSize);
+		dataread += chunkSize;
+		dataleft -= chunkSize;
 	}
+	
+	return;
 }
 
 void File::writeInChunks(char * block, size_t chunkSize, size_t blockSize)
 {
-	uInt dataWritten = 0;
-	uInt dataLeft = blockSize;
-	while(dataWritten < blockSize)
+	int datawritten = 0, dataleft = blockSize;
+
+	while(dataleft > 0)
 	{
-		if(dataLeft > chunkSize)
+		std::cout << dataleft << std::endl;
+		if(dataleft < chunkSize)
 		{
-			write(block + dataWritten, chunkSize);
-			dataWritten += chunkSize;
-			dataLeft = blockSize - dataWritten;
-		}
-		if(dataLeft < chunkSize)
-		{
-			write(block + dataWritten, dataLeft);
-			dataWritten += dataLeft;
-			dataLeft = blockSize - dataWritten;
+			write(block + datawritten, dataleft);
 			break;
 		}
-		std::cout << dataWritten << " / " << blockSize << "\r";
 
+		write(block + datawritten, chunkSize);
+		datawritten += chunkSize;
+		dataleft -= chunkSize;
 	}
+
+	return;
 }
