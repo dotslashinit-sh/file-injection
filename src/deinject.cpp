@@ -24,14 +24,14 @@ int main(int argc, char** argv)
 
 	MemoryBlock block(inputFileSize);
 
-	cout << "Deinject point: " << deinjectPoint << endl;
+	cout << "Camouflage file size: " << deinjectPoint << endl;
 
 	input.readInChunks(block.point(), CHUNK_SIZE, inputFileSize);
-	cout << "Read the file successfully." << endl;
-	output.writeInChunks(block.point(deinjectPoint), CHUNK_SIZE, outputFileSize);
-	cout << "Written the file successfully." << endl;
 
-	cout << "Task completed successfully!" << endl;
+	output.writeInChunks(block.point(deinjectPoint), CHUNK_SIZE, outputFileSize);
+
+
+
 
 	return 0;
 };
