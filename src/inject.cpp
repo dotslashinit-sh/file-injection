@@ -40,13 +40,13 @@ int main(int argc, char ** argv)
 
 	/*Read the data from the stream*/
 	camouflage.readInChunks(start, CHUNK_SIZE, camSize);
-	cout << "Decompile point: " << camSize << " " << adrSize << endl;
+	cout << "Camouflage file size: " << camSize << " " << adrSize << endl;
 	adrenalin.readInChunks(start + camSize, CHUNK_SIZE, adrSize);
 
-	cout << "Read the files successfully." << endl;
+	
 
 	output.writeInChunks(start, CHUNK_SIZE, outSize);
 
-	cout << "Task completed successfully." << endl;
+
 	return 0;
 }
