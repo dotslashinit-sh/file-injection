@@ -2,8 +2,8 @@
 ## Introduction
  Example of injecting and deinjecting files into JPEG, ZIP, RAR and MPEG files.
 
- After the injection, the program prints something I call "deinject point" or the size of the camouflage file.
- It is used to retrieve the hidden file from the injected file.
+ After the injection, the program prints the size of the camouflage file in bytes, which is later used for retrieving the hidden file.
+
 
 ## Usage
  **NOTE:** *Camouflage* is the file seen on the *outside* and *adrenalin* is the file hidden *inside*.
