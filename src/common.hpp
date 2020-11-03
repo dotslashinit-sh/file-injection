@@ -1,8 +1,6 @@
-#pragma once
+#ifndef COMMON_HPP_INCLUDE
 #include <fstream>
 #include <iostream>
-#include <vector>
-#include <thread>
 
 typedef unsigned uInt;
 
@@ -98,3 +96,5 @@ static bool operator==(const MemoryBlock & lhs, const MemoryBlock & rhs)
 {
 	return (lhs.block == rhs.block);
 }
+
+#endif

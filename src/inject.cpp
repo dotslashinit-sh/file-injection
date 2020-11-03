@@ -1,5 +1,3 @@
-#include <string>
-#include <vector>
 #include "common.hpp"
 
 using namespace std;
@@ -43,10 +41,7 @@ int main(int argc, char ** argv)
 	cout << "Camouflage file size: " << camSize << " " << adrSize << endl;
 	adrenalin.readInChunks(start + camSize, CHUNK_SIZE, adrSize);
 
-	
-
 	output.writeInChunks(start, CHUNK_SIZE, outSize);
-
 
 	return 0;
 }

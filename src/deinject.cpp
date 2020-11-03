@@ -21,17 +21,11 @@ int main(int argc, char** argv)
 	const uInt inputFileSize = input.fileSize();
 	const uInt outputFileSize = inputFileSize - deinjectPoint;
 	const uInt CHUNK_SIZE = 52428800;
-
 	MemoryBlock block(inputFileSize);
 
 	cout << "Camouflage file size: " << deinjectPoint << endl;
-
 	input.readInChunks(block.point(), CHUNK_SIZE, inputFileSize);
-
 	output.writeInChunks(block.point(deinjectPoint), CHUNK_SIZE, outputFileSize);
-
-
-
 
 	return 0;
 };

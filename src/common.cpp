@@ -2,20 +2,17 @@
 
 MemoryBlock::MemoryBlock(const MemoryBlock & mem) : blockSize(mem.blockSize), block(nullptr)
 {
-
 		for(size_t i = 0; i < blockSize; i++)
 			block[i] = mem.block[i];
 }
 
 MemoryBlock::MemoryBlock(MemoryBlock && mem) noexcept : blockSize(mem.blockSize), block(nullptr)
 {
-
 	mem.~MemoryBlock();
 }
 
 MemoryBlock::~MemoryBlock()
 {
-
 	delete[] block;
 }
 
@@ -100,14 +97,12 @@ void File::readInChunks(char * block, size_t chunkSize, size_t blockSize)
 		dataread += chunkSize;
 		dataleft -= chunkSize;
 	}
-	
 	return;
 }
 
 void File::writeInChunks(char * block, size_t chunkSize, size_t blockSize)
 {
 	int datawritten = 0, dataleft = blockSize;
-
 	while(dataleft > 0)
 	{
 		std::cout << dataleft << std::endl;
@@ -121,6 +116,5 @@ void File::writeInChunks(char * block, size_t chunkSize, size_t blockSize)
 		datawritten += chunkSize;
 		dataleft -= chunkSize;
 	}
-
 	return;
 }
