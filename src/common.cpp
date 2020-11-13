@@ -86,7 +86,6 @@ void File::readInChunks(char * block, size_t chunkSize, size_t blockSize)
 
 	while(dataleft > 0)
 	{
-		std::cout << dataleft << std::endl;
 		if(dataleft < chunkSize)
 		{
 			read(block + dataread, dataleft);
@@ -105,7 +104,6 @@ void File::writeInChunks(char * block, size_t chunkSize, size_t blockSize)
 	int datawritten = 0, dataleft = blockSize;
 	while(dataleft > 0)
 	{
-		std::cout << dataleft << std::endl;
 		if(dataleft < chunkSize)
 		{
 			write(block + datawritten, dataleft);
