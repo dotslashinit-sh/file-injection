@@ -88,13 +88,5 @@ private:
 
 	void readFile(char * block, size_t size);
 	void writeFile(char * block, size_t size);
-
-	friend class std::thread;
 };
-
-static bool operator==(const MemoryBlock & lhs, const MemoryBlock & rhs)
-{
-	return (lhs.block == rhs.block);
-}
-
 #endif
